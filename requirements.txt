@@ -1,0 +1,19 @@
+ultralytics
+torch - cuda
+torchvision
+torch audio
+numpy
+open cv
+albumentations
+fastapi
+streamlit
+pydantic
+# Tracking & Physics
+scipy>=1.10.0         # Kalman Filter, distance calc
+shapely>=2.0.1        # Geometric ops (e.g., zone overlaps)
+
+
+# Utilities
+tqdm>=4.65.0          # Progress bars
+
+just pip list later or freeze

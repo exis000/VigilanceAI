@@ -8,6 +8,10 @@ albumentations
 fastapi
 streamlit
 pydantic
+opencv
+tensorboard 
+
+
 # Tracking & Physics
 scipy>=1.10.0         # Kalman Filter, distance calc
 shapely>=2.0.1        # Geometric ops (e.g., zone overlaps)

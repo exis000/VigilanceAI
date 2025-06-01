@@ -2,34 +2,62 @@
 from ultralytics import YOLO
 
 def main():
-    #baseline model
+    # Start from the official YOLOv11s pretrained weights
     model = YOLO("models/yolo11s.pt")
-    
-    
-    #training model
+
     model.train(
-        data="data/data.yaml",    # path to your data.yaml (train/val splits & class names)
-        epochs=50,                # total epochs
-        batch=8,                 # images per batch
-        imgsz=512,                # resize to 640×640
-        augment=True,             # enable built‑in Mosaic, MixUp, HSV, etc.
-        patience=5,               # early stop after 5 epochs w/o val mAP improvement
-        project="runs/train",     # top‑level folder for outputs
-        name="VigilanceAI_V1",            # subfolder (→ runs/train/phase1)
-        exist_ok=True,            # overwrite if that folder already exists
-        plots=True,               # save training/validation metric plots
-        device="cuda",              # to train on gpu
-        verbose=True,               # for notes
-        seed=42,                   #just random see
+        data="data/Gloves.yaml",  
+        epochs=100,             
+        batch=16,
+        imgsz=640,
+        device="cuda",
+    
+
+        # Optimizer & LR schedule
         optimizer="AdamW",
-        lr0=0.001,                      # Start higher than SGD
-        weight_decay=0.03,      # Critical for AdamW
-        momentum=0.9,               # Works with AdamW in YOLO
-        cos_lr=True
-)
+        lr0=0.002,
+        weight_decay=0.03,
+        momentum=0.9,
+        cos_lr=True,
+        amp=True,
 
+        # ─── Augmentation ────────────────────────────────
+        # augment=True,
+        # mosaic=0.6,
+        # mixup=0.3,
+        # hsv_h=0.015,
+        # hsv_s=0.4,
+        # hsv_v=0.4,
+        # degrees=30.0,
+        # translate=0.2,
+        # scale=0.5,
+        # shear=6.0,
+        # perspective=0.1,
+        # fliplr=0.5,
+        # flipud=0.1,
+        augment=True,
+        mosaic=0.5,   # only 20% of the time
+        mixup=0.3,    # only 10%
+        hsv_h=0.01, 
+        hsv_s=0.1, 
+        hsv_v=0.1,
+        degrees=25,   # smaller rotations
+        translate=0.1,
+        scale=0.3,
+        shear=2,
+        perspective=0.0,
+        fliplr=0.5,
+        flipud=0.0,
+        # ─── Training Control ─────────────────────────────
+        patience=25,             # early stop if no val mAP improvement
+        project="runs/train",
+        name="VigilanceAI_V3",  # new experiment name
+        exist_ok=True,
+        plots=True,
+        verbose=True,
+        seed=42
+    )
 
-#using name == main to avoid runtime error fork vs spawn which windows uses
 if __name__ == "__main__":
     main()
     

@@ -66,6 +66,24 @@ cv2.destroyAllWindows()
     Class 11: safety_vest_present
     Class 12: cones
     Class 13: reflector suit
+    
+    
+path: ../data
+train: train_final/images
+val: valid_final/images
+nc: 11
+names:
+  0: gloves
+  1: no_gloves
+  2: safety_glasses
+  3: no_safety_glasses
+  4: hardhat
+  5: no_hardhat
+  6: mask
+  7: no_mask
+  8: safety_vest
+  9: no_safety_vest
+  10: person
 
 
 file structure

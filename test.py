@@ -2,7 +2,7 @@ from pathlib import Path
 from collections import Counter
 
 # Set path to your YOLO label folder
-label_dir = Path("data/train/labels")
+label_dir = Path("data/train_final/labels")
 
 class_counter = Counter()
 
@@ -27,7 +27,7 @@ for class_id, count in sorted(class_counter.items()):
     Class 0: 3149 instances
     Class 1: 3381 instances
     Class 2: 2959 instances
-    Class 3: 28996 instances
+    Class 3: 28996 instances > 9k
     Class 4: 734 instances
     Class 5: 1965 instances
     Class 6: 4280 instances
@@ -37,7 +37,7 @@ for class_id, count in sorted(class_counter.items()):
     Class 10: 1432 instances
     Class 11: 1034 instances
     Class 12: 9843 instances
-    Class 13: 4499 instances
+    Class 13: 4499 instances 53.68k
     
     
     

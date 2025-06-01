@@ -53,7 +53,7 @@ default is just runs/detect/predict
 from pathlib import Path
 from collections import Counter, defaultdict
 
-# def count_labels(label_dir="data/train_small/labels"):
+# def count_labels(label_dir="data_original_2/train/labels"):
 #     label_dir = Path(label_dir)
 #     # Counter for total bounding‐box instances per class
 #     class_counts = Counter()
@@ -80,9 +80,14 @@ from collections import Counter, defaultdict
 # if __name__ == "__main__":
 #     count_labels()
 
-from ultralytics import YOLO
-model = YOLO("runs/train/VigilanceAI_V1/weights/best.pt")
-results = model.predict(source="data/test/images", max_det=100, save=True)
+# from ultralytics import YOLO
+# model = YOLO("runs/train/VigilanceAI_V1/weights/best.pt")
+# results = model.predict(source="data/test/images", max_det=100, save=True)
 
-for i in results[0]:
-    print (i)
+# for i in results[0]:
+#     print (i)
+
+path = "data/train/images"
+label_dir = Path(path)
+num_img = len(list(label_dir.glob("*.jpg")))
+print(num_img)

@@ -175,16 +175,7 @@ cython_debug/
 
 #for me
 /data/
-.test2
-.test3
-.test4
-.test5
-.test6
-.test7
-.test8
-.test9
-.test10
-.test11
+/test_folder/
 /models/
 /runs/
 /data_original_2/

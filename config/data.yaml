@@ -1,0 +1,10 @@
+train: ../data/processed/PPE_SAFETY_DATASET/train/images
+val:   ../data/processed/PPE_SAFETY_DATASET/valid/images
+test:  ../data/processed/PPE_SAFETY_DATASET/test/images
+
+nc: 4
+names:
+  0: Gloves
+  1: Hardhat
+  2: Person
+  3: Safety Vest

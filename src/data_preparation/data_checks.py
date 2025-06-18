@@ -7,7 +7,9 @@ def validate_dataset(data_dir):
     
     data_dir = ur data path so its "data/train" or you can also valid and test to check them too
     
-    Validates images and labels in a YOLO dataset.
+    so if you wanna do a data check just change file path to what you want
+    
+    Validates images and labels 
     - Checks for corrupt images
     - Validates bounding boxes (0 <= x_center, y_center, width, height <= 1)
     - Checks for non-positive width/height
@@ -73,9 +75,13 @@ def validate_dataset(data_dir):
 
 # Usage
 if __name__ == "__main__":
-    data_dir = "data/valid"
+    data_dir = "data/processed/PPE_SAFETY_DATASET/valid"
     results = validate_dataset(data_dir)
 
 """output: no corrupt images , invalid boxes, invalid class id's
           are detected in both train and valid dataset   
+          
+          Corrupt images: 0
+          Invalid boxes: 0
+          Invalid class IDs: 0
 """

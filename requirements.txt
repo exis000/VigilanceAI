@@ -8,7 +8,7 @@ albumentations
 fastapi
 streamlit
 pydantic
-opencv
+opencv-python
 tensorboard 
 
 
@@ -21,3 +21,4 @@ shapely>=2.0.1        # Geometric ops (e.g., zone overlaps)
 tqdm>=4.65.0          # Progress bars
 
 just pip list later or freeze
+huggingface_hub

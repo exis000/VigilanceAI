@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 4
+names: ['Gloves', 'Hardhat', 'Person', 'Safety Vest']
+
+roboflow:
+  workspace: whalehunter69-wcbnm
+  project: construction-site-safety-5
+  version: 1
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/whalehunter69-wcbnm/construction-site-safety-5/dataset/1
